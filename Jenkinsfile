@@ -131,5 +131,9 @@ environment {
          }
         }
       }	 */
+    stage ('K8S Deploy'){
+                    sh 'kubectl apply -f spring-boot.yaml'
+      } 
+       }	  
   }	  	  
 }
