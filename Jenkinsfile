@@ -132,7 +132,16 @@ environment {
         }
       }	 */
     stage ('K8S Deploy'){
-                    sh 'kubectl apply -f spring-boot.yaml'
+                    //sh 'kubectl apply -f spring-boot.yaml'
+	           sh'kubectl create -f voting-app-deploy.yaml'
+		   sh 'kubectl create -f voting-app-service.yaml'
+		   sh 'kubectl create -f redis-deploy.yaml'
+		   sh 'kubectl create -f redis-service.yaml'
+		   sh 'kubectl create -f postgres-deploy.yaml'
+		   sh 'kubectl create -f postgres-service.yaml'
+		   sh 'kubectl create -f worker-app-deploy.yaml'
+		   sh 'kubectl create -f result-app-deploy.yaml'
+		   sh 'kubectl create -f result-app-service.yaml'
       } 
        }	  
   }	  	  
