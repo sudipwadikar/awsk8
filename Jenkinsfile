@@ -14,14 +14,14 @@ environment {
         REPOSITORY_URI = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_REPO_NAME}"
 }
   stages {
-	stage('Submit Stack') {
+	/*stage('Submit Stack') {
             steps {
             //sh "aws cloudformation create-stack --stack-name ec2sg --template-body file://ec2sg.yaml --region 'us-east-1'"
 	    sh "aws cloudformation create-stack --stack-name arch --template-body file://3tier.yaml --region 'us-east-1'"    
 	    //sh "aws cloudformation delete-stack --stack-name arch --region 'us-east-1'"
             //sh "aws cloudformation delete-stack --stack-name ec2sg --region 'us-east-1'"
               }
-             }	  
+             }*/	  
     stage('Execute_Maven') {
 	  steps {
 	    script {
