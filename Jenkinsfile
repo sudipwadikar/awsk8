@@ -29,7 +29,7 @@ environment {
         }			                      
       }
     }	
-    stage('Server'){
+    /* stage('Server'){
 	  steps{
 	  rtServer (
 		id: "Artifactory",
@@ -62,7 +62,7 @@ environment {
 			 serverId:"Artifactory"
 			)
 		  }
-	  }
+	  }*/
 	  
 	  
     stage('Test_Maven') {
@@ -75,6 +75,7 @@ environment {
                }
               }
 	   }
+	/*  
 	stage('SonarQube_Analysis'){
             steps{
                 script{
@@ -96,7 +97,7 @@ environment {
      sh 'chmod +x delete_cont.sh'
      sh './delete_cont.sh'	      
     }
-  }
+  }*/
   stage('Building image') {
 	  steps{
           sh 'docker build -t sudipwadikar/springtest:$BUILD_NUMBER .'
@@ -111,7 +112,7 @@ environment {
 	  }
     }
   }
-  stage('Logging into AWS ECR') {
+  /*stage('Logging into AWS ECR') {
             steps {
                 script {
                 sh "aws ecr get-login-password --region ${AWS_DEFAULT_REGION} | docker login --username AWS --password-stdin ${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com"
@@ -129,14 +130,6 @@ environment {
 		//sh "docker push sudipwadikar/springtest:$BUILD_NUMBER"	 
          }
         }
-      }	*/ 
-	/*  stage('SSH to Server'){
-	  steps{
-		sshagent(['Instance']) {
-			sh 'ssh -i /home/ubuntu/.ssh/teraform ec2-user@50.16.155.25'	
-		}
-               
-	}
-}*/	  
+      }	 */
   }	  	  
 }
