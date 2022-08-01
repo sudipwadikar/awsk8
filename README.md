@@ -1,11 +1,7 @@
-# Simple Spring Boot Maven Project developed in Jenkins Declarative Pipeline
+## Example Voting App Kubernetes
 
-DevOps Tools Used
+This is based on the original [example-voting-app](https://github.com/dockersamples/example-voting-app) repository from the [docker-examples](https://github.com/dockersamples) GitHub page
 
-Git Maven Jenkins Tomcat Docker
+and modified it to work on the Kubernetes cluster.
 
-# Access to the tomcat after successfully deploying:
 
-Ex: http://awsip:8050/helloworld-0.0.1-SNAPSHOT/hello
-
-Note: Tomcat was made to access in the port 8050. It was changed in the Dockerfile's RUN command.
